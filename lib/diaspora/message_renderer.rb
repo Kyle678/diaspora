@@ -169,21 +169,21 @@ module Diaspora
     # @param [Hash] opts Override global output options, see {#initialize}
     def plain_text opts={}
       process(opts) {
-        make_mentions_plain_text
-        diaspora_links
-        squish
-        append_and_truncate
+        #make_mentions_plain_text
+        #diaspora_links
+        #squish
+        #append_and_truncate
       }
     end
 
     # @param [Hash] opts Override global output options, see {#initialize}
     def plain_text_without_markdown opts={}
       process(opts) {
-        make_mentions_plain_text
-        diaspora_links
-        strip_markdown
-        squish
-        append_and_truncate
+        #make_mentions_plain_text
+        #diaspora_links
+        #strip_markdown
+        #squish
+        #append_and_truncate
       }
     end
 

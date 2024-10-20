@@ -27,8 +27,7 @@ class Message < ApplicationRecord
 
   def message
     processed_text = process_text(text)
-    #@message ||= Diaspora::MessageRenderer.new(processed_text)
-    @message = processed_text
+    @message ||= Diaspora::MessageRenderer.new(processed_text)
   end
 
   def process_text(content)
