@@ -69,7 +69,7 @@ defaults:
       root:
       key:
   settings:
-    pod_name: 'diaspora*'
+    pod_name: 'Group 11 Pod*'
     enable_registrations: true
     enable_local_posts_stream: 'disabled'
     autofollow_on_join: true
