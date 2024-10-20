@@ -1,0 +1,928 @@
+.
+├── assets
+│   ├── config
+│   │   └── manifest.js
+│   ├── images
+│   │   ├── ajax-loader2.gif
+│   │   ├── apple-touch-icon.png
+│   │   ├── branding
+│   │   │   ├── ball.png
+│   │   │   └── logos
+│   │   │       ├── app-icon-512.png
+│   │   │       ├── app-icon.png
+│   │   │       ├── asterisk.png
+│   │   │       ├── asterisk_white_mobile.png
+│   │   │       └── header-logo2x.png
+│   │   ├── buttons
+│   │   │   ├── liberapay-button.svg
+│   │   │   └── playbtn.png
+│   │   ├── dandelion.jpg
+│   │   ├── favicon.png
+│   │   ├── fonts
+│   │   │   ├── diaspora-custom.ttf
+│   │   │   └── svg-icons
+│   │   │       └── compose_mobile.svg
+│   │   ├── mobile-spinner.gif
+│   │   ├── peeping-tom.png
+│   │   ├── sadcat.jpg
+│   │   ├── social-media-logos
+│   │   │   ├── Readme.txt
+│   │   │   ├── tumblr-16x16.png
+│   │   │   ├── tumblr-24x24.png
+│   │   │   ├── tumblr-32x32.png
+│   │   │   ├── twitter-16x16.png
+│   │   │   ├── twitter-24x24.png
+│   │   │   ├── twitter-32x32.png
+│   │   │   ├── wordpress-16x16.png
+│   │   │   ├── wordpress-24x24.png
+│   │   │   └── wordpress-32x32.png
+│   │   └── user
+│   │       └── default.png
+│   ├── javascripts
+│   │   ├── api
+│   │   │   └── authorization_page.js
+│   │   ├── app
+│   │   │   ├── app.js
+│   │   │   ├── collections
+│   │   │   │   ├── aspect_memberships.js
+│   │   │   │   ├── aspect_selections.js
+│   │   │   │   ├── aspects.js
+│   │   │   │   ├── comments.js
+│   │   │   │   ├── contacts.js
+│   │   │   │   ├── likes.js
+│   │   │   │   ├── notifications.js
+│   │   │   │   ├── photos.js
+│   │   │   │   ├── pods.js
+│   │   │   │   ├── posts.js
+│   │   │   │   ├── reshares.js
+│   │   │   │   └── tag_followings.js
+│   │   │   ├── helpers
+│   │   │   │   ├── date_formatter.js
+│   │   │   │   ├── direction_detector.js
+│   │   │   │   ├── handlebars-helpers.js
+│   │   │   │   ├── handlebars-partials.js
+│   │   │   │   ├── locations.js
+│   │   │   │   ├── modal_helper.js
+│   │   │   │   ├── o_embed.js
+│   │   │   │   ├── shortcuts.js
+│   │   │   │   ├── text_formatter.js
+│   │   │   │   ├── timeago.js
+│   │   │   │   └── truncate.js
+│   │   │   ├── models
+│   │   │   │   ├── aspect.js
+│   │   │   │   ├── aspect_membership.js
+│   │   │   │   ├── aspect_selection.js
+│   │   │   │   ├── block.js
+│   │   │   │   ├── comment.js
+│   │   │   │   ├── contact.js
+│   │   │   │   ├── like.js
+│   │   │   │   ├── like_interactions.js
+│   │   │   │   ├── notification.js
+│   │   │   │   ├── person.js
+│   │   │   │   ├── photo.js
+│   │   │   │   ├── pod.js
+│   │   │   │   ├── poll_participation.js
+│   │   │   │   ├── post.js
+│   │   │   │   ├── post_interactions.js
+│   │   │   │   ├── profile.js
+│   │   │   │   ├── report.js
+│   │   │   │   ├── reshare.js
+│   │   │   │   ├── status_message.js
+│   │   │   │   ├── stream.js
+│   │   │   │   ├── stream_aspects.js
+│   │   │   │   ├── tag_following.js
+│   │   │   │   └── user.js
+│   │   │   ├── models.js
+│   │   │   ├── pages
+│   │   │   │   ├── admin_dashboard.js
+│   │   │   │   ├── admin_pods.js
+│   │   │   │   ├── contacts.js
+│   │   │   │   ├── getting_started.js
+│   │   │   │   ├── profile.js
+│   │   │   │   ├── settings.js
+│   │   │   │   └── single-post-viewer.js
+│   │   │   ├── router.js
+│   │   │   ├── views
+│   │   │   │   ├── aspect_create_view.js
+│   │   │   │   ├── aspect_membership_view.js
+│   │   │   │   ├── aspect_view.js
+│   │   │   │   ├── aspects_dropdown_view.js
+│   │   │   │   ├── aspects_list_view.js
+│   │   │   │   ├── back_to_top_view.js
+│   │   │   │   ├── bookmarklet_view.js
+│   │   │   │   ├── comment_mention_view.js
+│   │   │   │   ├── comment_stream_view.js
+│   │   │   │   ├── comment_view.js
+│   │   │   │   ├── contact_stream_view.js
+│   │   │   │   ├── contact_view.js
+│   │   │   │   ├── content_view.js
+│   │   │   │   ├── conversations_form_view.js
+│   │   │   │   ├── conversations_inbox_view.js
+│   │   │   │   ├── faq_question_view.js
+│   │   │   │   ├── feedback_view.js
+│   │   │   │   ├── flash_messages_view.js
+│   │   │   │   ├── gallery_view.js
+│   │   │   │   ├── header_view.js
+│   │   │   │   ├── help_section_view.js
+│   │   │   │   ├── help_view.js
+│   │   │   │   ├── hovercard_view.js
+│   │   │   │   ├── infinite_stream_view.js
+│   │   │   │   ├── likes_info_view.js
+│   │   │   │   ├── location_stream.js
+│   │   │   │   ├── locator.js
+│   │   │   │   ├── no_posts_info_view.js
+│   │   │   │   ├── notification_dropdown_view.js
+│   │   │   │   ├── notifications_view.js
+│   │   │   │   ├── photo_view.js
+│   │   │   │   ├── photos_view.js
+│   │   │   │   ├── pod_entry_view.js
+│   │   │   │   ├── poll_view.js
+│   │   │   │   ├── post_controls_view.js
+│   │   │   │   ├── post_view.js
+│   │   │   │   ├── preview_post_view.js
+│   │   │   │   ├── profile_header_view.js
+│   │   │   │   ├── profile_sidebar_view.js
+│   │   │   │   ├── publisher
+│   │   │   │   │   ├── aspect_selector_view.js
+│   │   │   │   │   ├── getting_started_view.js
+│   │   │   │   │   ├── mention_view.js
+│   │   │   │   │   ├── poll_creator_view.js
+│   │   │   │   │   ├── services_view.js
+│   │   │   │   │   └── uploader_view.js
+│   │   │   │   ├── publisher_view.js
+│   │   │   │   ├── reshares_info_view.js
+│   │   │   │   ├── search_base_view.js
+│   │   │   │   ├── search_view.js
+│   │   │   │   ├── sidebar.js
+│   │   │   │   ├── single-post-viewer
+│   │   │   │   │   ├── single_post_actions.js
+│   │   │   │   │   ├── single_post_comment_stream.js
+│   │   │   │   │   ├── single_post_content_view.js
+│   │   │   │   │   ├── single_post_interaction_counts.js
+│   │   │   │   │   ├── single_post_interactions.js
+│   │   │   │   │   └── single_post_moderation.js
+│   │   │   │   ├── stream
+│   │   │   │   │   └── shortcuts.js
+│   │   │   │   ├── stream_post_views.js
+│   │   │   │   ├── stream_view.js
+│   │   │   │   ├── tag_following_action_view.js
+│   │   │   │   ├── tag_following_list_view.js
+│   │   │   │   ├── tag_following_view.js
+│   │   │   │   └── tags_view.js
+│   │   │   └── views.js
+│   │   ├── bookmarklet.js
+│   │   ├── contact-list.js
+│   │   ├── diaspora.js
+│   │   ├── helpers
+│   │   │   ├── browser_notification.js
+│   │   │   ├── i18n.js
+│   │   │   ├── markdown_editor.js
+│   │   │   ├── post_photo_uploader.es6
+│   │   │   ├── profile_photo_uploader.es6
+│   │   │   ├── protocol_handler.js
+│   │   │   └── tags_autocomplete.js
+│   │   ├── jasmine-load-all.js
+│   │   ├── main.js
+│   │   ├── mobile
+│   │   │   ├── bookmarklet.js
+│   │   │   ├── mobile.js
+│   │   │   ├── mobile_alert.js
+│   │   │   ├── mobile_application.js
+│   │   │   ├── mobile_comments.js
+│   │   │   ├── mobile_conversations.js
+│   │   │   ├── mobile_drawer.js
+│   │   │   ├── mobile_file_uploader.js
+│   │   │   ├── mobile_post_actions.js
+│   │   │   ├── mobile_profile_edit.js
+│   │   │   ├── mobile_profile_photo_uploader.js
+│   │   │   ├── profile_aspects.js
+│   │   │   ├── publisher.js
+│   │   │   └── tag_following.js
+│   │   ├── osmlocator.js
+│   │   ├── pages
+│   │   │   └── users-getting-started.js
+│   │   └── widgets
+│   │       ├── direction-detector.js
+│   │       └── timeago.js
+│   ├── stylesheets
+│   │   ├── _application.scss
+│   │   ├── _flash_messages.scss
+│   │   ├── _mixins.scss
+│   │   ├── admin.scss
+│   │   ├── animations.scss
+│   │   ├── aspects.scss
+│   │   ├── base.scss
+│   │   ├── bookmarklet.scss
+│   │   ├── bootstrap-complete.scss
+│   │   ├── bootstrap-variables.scss
+│   │   ├── card-footer.scss
+│   │   ├── code.scss
+│   │   ├── color-variables.scss
+│   │   ├── color_themes
+│   │   │   ├── _color_theme_override.scss
+│   │   │   ├── _color_theme_override_dark.scss
+│   │   │   ├── _color_theme_override_origwhite.scss
+│   │   │   ├── dark
+│   │   │   │   ├── _style.scss
+│   │   │   │   ├── desktop.scss
+│   │   │   │   └── mobile.scss
+│   │   │   ├── dark_green
+│   │   │   │   ├── _style.scss
+│   │   │   │   ├── desktop.scss
+│   │   │   │   └── mobile.scss
+│   │   │   ├── egyptian_blue
+│   │   │   │   ├── _style.scss
+│   │   │   │   ├── desktop.scss
+│   │   │   │   └── mobile.scss
+│   │   │   ├── magenta
+│   │   │   │   ├── _style.scss
+│   │   │   │   ├── desktop.scss
+│   │   │   │   └── mobile.scss
+│   │   │   ├── original
+│   │   │   │   ├── desktop.scss
+│   │   │   │   └── mobile.scss
+│   │   │   └── original_white
+│   │   │       ├── _style.scss
+│   │   │       ├── desktop.scss
+│   │   │       └── mobile.scss
+│   │   ├── colors.scss
+│   │   ├── comments.scss
+│   │   ├── contacts.scss
+│   │   ├── conversations.scss
+│   │   ├── error_pages.scss
+│   │   ├── footer.scss
+│   │   ├── forms.scss
+│   │   ├── gallery.scss
+│   │   ├── getting-started.scss
+│   │   ├── header.scss
+│   │   ├── help.scss
+│   │   ├── home.scss
+│   │   ├── hovercard.scss
+│   │   ├── icons.scss
+│   │   ├── interactions.scss
+│   │   ├── invitations.scss
+│   │   ├── login.scss
+│   │   ├── map.scss
+│   │   ├── markdown-content.scss
+│   │   ├── markdown-editor.scss
+│   │   ├── media-box.scss
+│   │   ├── media-embed.scss
+│   │   ├── mobile
+│   │   │   ├── comments.scss
+│   │   │   ├── conversations.scss
+│   │   │   ├── flash_messages.scss
+│   │   │   ├── header.scss
+│   │   │   ├── markdown_editor.scss
+│   │   │   ├── mobile.scss
+│   │   │   ├── openid_connect_error_page.scss
+│   │   │   ├── settings.scss
+│   │   │   ├── stream_element.scss
+│   │   │   └── tags.scss
+│   │   ├── modern-design.scss
+│   │   ├── navbar_left.scss
+│   │   ├── notifications.scss
+│   │   ├── oembed.scss
+│   │   ├── opengraph.scss
+│   │   ├── openid_connect_error_page.scss
+│   │   ├── people.scss
+│   │   ├── poll.scss
+│   │   ├── poltergeist_disable_transition.scss
+│   │   ├── post-content.scss
+│   │   ├── profile.scss
+│   │   ├── publisher.scss
+│   │   ├── registration.scss
+│   │   ├── rtl.scss
+│   │   ├── settings.scss
+│   │   ├── sidebar.scss
+│   │   ├── single-post-view.scss
+│   │   ├── spinner.scss
+│   │   ├── statistics.scss
+│   │   ├── stream.scss
+│   │   ├── stream_element.scss
+│   │   ├── tag.scss
+│   │   ├── terms.scss
+│   │   ├── timeago.scss
+│   │   ├── typeahead.scss
+│   │   ├── typography.scss
+│   │   ├── user_applications.scss
+│   │   └── vendor
+│   │       ├── autoSuggest.css
+│   │       └── images
+│   │           └── ajax-loader.png
+│   └── templates
+│       ├── aspect_create_modal_tpl.jst.hbs
+│       ├── aspect_membership_dropdown_tpl.jst.hbs
+│       ├── aspect_tpl.jst.hbs
+│       ├── aspects-list_tpl.jst.hbs
+│       ├── comment-stream_tpl.jst.hbs
+│       ├── comment_tpl.jst.hbs
+│       ├── contact_tpl.jst.hbs
+│       ├── conversation_recipient_tag_tpl.jst.hbs
+│       ├── faq_getting_help_tpl.jst.hbs
+│       ├── faq_keyboard_shortcuts_tpl.jst.hbs
+│       ├── faq_posts_and_posting_tpl.jst.hbs
+│       ├── faq_question_tpl.jst.hbs
+│       ├── faq_sharing_tpl.jst.hbs
+│       ├── faq_tags_tpl.jst.hbs
+│       ├── feedback_tpl.jst.hbs
+│       ├── flash_messages_tpl.jst.hbs
+│       ├── header_tpl.jst.hbs
+│       ├── help_tpl.jst.hbs
+│       ├── hovercard_tpl.jst.hbs
+│       ├── likes-info_tpl.jst.hbs
+│       ├── media-embed_tpl.jst.hbs
+│       ├── no_posts_info_tpl.jst.hbs
+│       ├── oembed_tpl.jst.hbs
+│       ├── opengraph_tpl.jst.hbs
+│       ├── photo_tpl.jst.hbs
+│       ├── pod_table_entry_tpl.jst.hbs
+│       ├── pod_table_tpl.jst.hbs
+│       ├── poll_creator_tpl.jst.hbs
+│       ├── poll_tpl.jst.hbs
+│       ├── post-controls_tpl.jst.hbs
+│       ├── profile_header_tpl.jst.hbs
+│       ├── profile_sidebar_tpl.jst.hbs
+│       ├── reshare_tpl.jst.hbs
+│       ├── reshares-info_tpl.jst.hbs
+│       ├── search_suggestion_tpl.jst.hbs
+│       ├── single-post-viewer
+│       │   ├── single-post-actions_tpl.jst.hbs
+│       │   ├── single-post-content_tpl.jst.hbs
+│       │   ├── single-post-interaction-counts_tpl.jst.hbs
+│       │   ├── single-post-interactions_tpl.jst.hbs
+│       │   └── single-post-moderation_tpl.jst.hbs
+│       ├── single-post-viewer_tpl.jst.hbs
+│       ├── static-text_tpl.jst.hbs
+│       ├── status-message-location_tpl.jst.hbs
+│       ├── status-message_tpl.jst.hbs
+│       ├── stream-element_tpl.jst.hbs
+│       ├── tag_following_action_tpl.jst.hbs
+│       ├── tag_following_list_tpl.jst.hbs
+│       └── tag_following_tpl.jst.hbs
+├── controllers
+│   ├── admin
+│   │   ├── admin_controller.rb
+│   │   ├── pods_controller.rb
+│   │   └── users_controller.rb
+│   ├── admins_controller.rb
+│   ├── api
+│   │   ├── openid_connect
+│   │   │   ├── authorizations_controller.rb
+│   │   │   ├── clients_controller.rb
+│   │   │   ├── discovery_controller.rb
+│   │   │   ├── id_tokens_controller.rb
+│   │   │   ├── token_endpoint_controller.rb
+│   │   │   ├── user_applications_controller.rb
+│   │   │   └── user_info_controller.rb
+│   │   └── v1
+│   │       ├── aspects_controller.rb
+│   │       ├── base_controller.rb
+│   │       ├── comments_controller.rb
+│   │       ├── contacts_controller.rb
+│   │       ├── conversations_controller.rb
+│   │       ├── likes_controller.rb
+│   │       ├── messages_controller.rb
+│   │       ├── notifications_controller.rb
+│   │       ├── photos_controller.rb
+│   │       ├── post_interactions_controller.rb
+│   │       ├── posts_controller.rb
+│   │       ├── reshares_controller.rb
+│   │       ├── search_controller.rb
+│   │       ├── streams_controller.rb
+│   │       ├── tag_followings_controller.rb
+│   │       └── users_controller.rb
+│   ├── application_controller.rb
+│   ├── aspect_memberships_controller.rb
+│   ├── aspects_controller.rb
+│   ├── blocks_controller.rb
+│   ├── comments_controller.rb
+│   ├── contacts_controller.rb
+│   ├── conversation_visibilities_controller.rb
+│   ├── conversations_controller.rb
+│   ├── help_controller.rb
+│   ├── home_controller.rb
+│   ├── invitation_codes_controller.rb
+│   ├── invitations_controller.rb
+│   ├── likes_controller.rb
+│   ├── links_controller.rb
+│   ├── manifest_controller.rb
+│   ├── messages_controller.rb
+│   ├── node_info_controller.rb
+│   ├── notifications_controller.rb
+│   ├── participations_controller.rb
+│   ├── people_controller.rb
+│   ├── photos_controller.rb
+│   ├── poll_participations_controller.rb
+│   ├── posts_controller.rb
+│   ├── profiles_controller.rb
+│   ├── registrations_controller.rb
+│   ├── report_controller.rb
+│   ├── reshares_controller.rb
+│   ├── search_controller.rb
+│   ├── services_controller.rb
+│   ├── sessions_controller.rb
+│   ├── share_visibilities_controller.rb
+│   ├── status_messages_controller.rb
+│   ├── streams_controller.rb
+│   ├── tag_followings_controller.rb
+│   ├── tags_controller.rb
+│   ├── terms_controller.rb
+│   ├── two_factor_authentications_controller.rb
+│   └── users_controller.rb
+├── helpers
+│   ├── activity_streams_helper.rb
+│   ├── application_helper.rb
+│   ├── aspect_global_helper.rb
+│   ├── contacts_helper.rb
+│   ├── conversations_helper.rb
+│   ├── error_messages_helper.rb
+│   ├── getting_started_helper.rb
+│   ├── gon_helper.rb
+│   ├── interim_stream_hackiness_helper.rb
+│   ├── invitation_codes_helper.rb
+│   ├── language_helper.rb
+│   ├── layout_helper.rb
+│   ├── meta_data_helper.rb
+│   ├── mobile_helper.rb
+│   ├── notifications_helper.rb
+│   ├── notifier_helper.rb
+│   ├── o_embed_helper.rb
+│   ├── open_graph_helper.rb
+│   ├── people_helper.rb
+│   ├── posts_helper.rb
+│   ├── profile_helper.rb
+│   ├── publisher_helper.rb
+│   ├── report_helper.rb
+│   ├── services_helper.rb
+│   ├── sessions_helper.rb
+│   ├── statistics_helper.rb
+│   ├── stream_helper.rb
+│   ├── tags_helper.rb
+│   ├── user_applications_helper.rb
+│   └── users_helper.rb
+├── mailers
+│   ├── application_mailer.rb
+│   ├── diaspora_devise_mailer.rb
+│   ├── export_mailer.rb
+│   ├── maintenance.rb
+│   ├── notification_mailers
+│   │   ├── also_commented.rb
+│   │   ├── base.rb
+│   │   ├── comment_on_post.rb
+│   │   ├── confirm_email.rb
+│   │   ├── contacts_birthday.rb
+│   │   ├── csrf_token_fail.rb
+│   │   ├── liked.rb
+│   │   ├── liked_comment.rb
+│   │   ├── mentioned.rb
+│   │   ├── mentioned_in_comment.rb
+│   │   ├── private_message.rb
+│   │   ├── reshared.rb
+│   │   └── started_sharing.rb
+│   ├── notifier.rb
+│   └── report_mailer.rb
+├── models
+│   ├── account_deletion.rb
+│   ├── account_migration.rb
+│   ├── api
+│   │   └── openid_connect
+│   │       ├── authorization.rb
+│   │       ├── o_auth_access_token.rb
+│   │       ├── o_auth_application.rb
+│   │       └── pairwise_pseudonymous_identifier.rb
+│   ├── application_record.rb
+│   ├── aspect.rb
+│   ├── aspect_membership.rb
+│   ├── aspect_visibility.rb
+│   ├── block.rb
+│   ├── comment.rb
+│   ├── comment_signature.rb
+│   ├── contact.rb
+│   ├── conversation.rb
+│   ├── conversation_visibility.rb
+│   ├── invitation_code.rb
+│   ├── like.rb
+│   ├── like_signature.rb
+│   ├── location.rb
+│   ├── mention.rb
+│   ├── message.rb
+│   ├── notification.rb
+│   ├── notification_actor.rb
+│   ├── notifications
+│   │   ├── also_commented.rb
+│   │   ├── comment_on_post.rb
+│   │   ├── commented.rb
+│   │   ├── contacts_birthday.rb
+│   │   ├── liked.rb
+│   │   ├── liked_comment.rb
+│   │   ├── mentioned.rb
+│   │   ├── mentioned_in_comment.rb
+│   │   ├── mentioned_in_post.rb
+│   │   ├── private_message.rb
+│   │   ├── reshared.rb
+│   │   └── started_sharing.rb
+│   ├── o_embed_cache.rb
+│   ├── open_graph_cache.rb
+│   ├── participation.rb
+│   ├── person.rb
+│   ├── photo.rb
+│   ├── pod.rb
+│   ├── poll.rb
+│   ├── poll_answer.rb
+│   ├── poll_participation.rb
+│   ├── poll_participation_signature.rb
+│   ├── post.rb
+│   ├── profile.rb
+│   ├── reference.rb
+│   ├── report.rb
+│   ├── reshare.rb
+│   ├── role.rb
+│   ├── service.rb
+│   ├── services
+│   │   ├── tumblr.rb
+│   │   ├── twitter.rb
+│   │   └── wordpress.rb
+│   ├── share_visibility.rb
+│   ├── signature_order.rb
+│   ├── status_message.rb
+│   ├── tag_following.rb
+│   ├── user
+│   │   ├── connecting.rb
+│   │   ├── querying.rb
+│   │   └── social_actions.rb
+│   ├── user.rb
+│   └── user_preference.rb
+├── presenters
+│   ├── aspect_membership_presenter.rb
+│   ├── aspect_presenter.rb
+│   ├── avatar_presenter.rb
+│   ├── base_presenter.rb
+│   ├── block_presenter.rb
+│   ├── comment_presenter.rb
+│   ├── contact_presenter.rb
+│   ├── conversation_presenter.rb
+│   ├── last_three_comments_decorator.rb
+│   ├── likes_presenter.rb
+│   ├── message_presenter.rb
+│   ├── node_info_presenter.rb
+│   ├── notification_presenter.rb
+│   ├── o_embed_presenter.rb
+│   ├── person_presenter.rb
+│   ├── photo_presenter.rb
+│   ├── pod_presenter.rb
+│   ├── poll_presenter.rb
+│   ├── post_interaction_presenter.rb
+│   ├── post_presenter.rb
+│   ├── profile_presenter.rb
+│   ├── service_presenter.rb
+│   ├── tag_stream_presenter.rb
+│   ├── user_application_presenter.rb
+│   ├── user_applications_presenter.rb
+│   └── user_presenter.rb
+├── serializers
+│   ├── export
+│   │   ├── aspect_serializer.rb
+│   │   ├── contact_serializer.rb
+│   │   ├── others_data_serializer.rb
+│   │   ├── own_post_serializer.rb
+│   │   ├── own_relayables_serializer.rb
+│   │   └── user_serializer.rb
+│   ├── federation_entity_serializer.rb
+│   ├── flat_map_array_serializer.rb
+│   ├── notification_serializer.rb
+│   ├── serializer_post_processing.rb
+│   └── user_info_serializer.rb
+├── services
+│   ├── aspects_membership_service.rb
+│   ├── block_service.rb
+│   ├── comment_service.rb
+│   ├── conversation_service.rb
+│   ├── diaspora_link_service.rb
+│   ├── import_service.rb
+│   ├── like_service.rb
+│   ├── migration_service.rb
+│   ├── notification_service.rb
+│   ├── photo_service.rb
+│   ├── poll_participation_service.rb
+│   ├── post_service.rb
+│   ├── reshare_service.rb
+│   ├── status_message_creation_service.rb
+│   └── tag_following_service.rb
+├── tree_info.txt
+├── uploaders
+│   ├── exported_photos.rb
+│   ├── exported_user.rb
+│   ├── processed_image.rb
+│   ├── secure_uploader.rb
+│   └── unprocessed_image.rb
+├── views
+│   ├── admins
+│   │   ├── _admin_bar.haml
+│   │   ├── _dashboard.haml
+│   │   ├── _stats.haml
+│   │   ├── _user_entry.haml
+│   │   ├── _user_search.haml
+│   │   ├── _weekly_user_stats.haml
+│   │   ├── dashboard.html.haml
+│   │   ├── dashboard.mobile.haml
+│   │   ├── pods.html.haml
+│   │   ├── pods.mobile.haml
+│   │   ├── stats.html.haml
+│   │   ├── stats.mobile.haml
+│   │   ├── user_search.html.haml
+│   │   ├── user_search.mobile.haml
+│   │   ├── weekly_user_stats.haml
+│   │   └── weekly_user_stats.mobile.haml
+│   ├── api
+│   │   └── openid_connect
+│   │       ├── authorizations
+│   │       │   ├── _grants_list.haml
+│   │       │   └── new.haml
+│   │       ├── error
+│   │       │   ├── _error.haml
+│   │       │   ├── error.html.haml
+│   │       │   └── error.mobile.haml
+│   │       └── user_applications
+│   │           ├── _add_remove_applications.haml
+│   │           ├── _grants_list.haml
+│   │           ├── index.html.haml
+│   │           └── index.mobile.haml
+│   ├── aspect_memberships
+│   │   ├── _aspect_membership_dropdown.haml
+│   │   └── _aspect_membership_dropdown.mobile.haml
+│   ├── aspects
+│   │   ├── _aspect_dropdown.html.haml
+│   │   ├── _aspect_dropdown.mobile.haml
+│   │   ├── _aspect_listings.haml
+│   │   ├── _aspect_stream.haml
+│   │   └── _no_contacts_message.haml
+│   ├── comments
+│   │   ├── _comment.mobile.haml
+│   │   ├── _new_comment.mobile.haml
+│   │   ├── _post_stats.mobile.haml
+│   │   ├── index.mobile.haml
+│   │   └── new.mobile.haml
+│   ├── contacts
+│   │   ├── _aspect_listings.haml
+│   │   ├── _header.html.haml
+│   │   ├── _sidebar.html.haml
+│   │   ├── index.html.haml
+│   │   ├── index.mobile.haml
+│   │   └── spotlight.haml
+│   ├── conversations
+│   │   ├── _conversation.haml
+│   │   ├── _conversation.mobile.haml
+│   │   ├── _conversation_subject.haml
+│   │   ├── _message.html.haml
+│   │   ├── _message.mobile.haml
+│   │   ├── _messages.haml
+│   │   ├── _new.haml
+│   │   ├── _show.haml
+│   │   ├── _show.mobile.haml
+│   │   ├── index.haml
+│   │   ├── index.mobile.haml
+│   │   ├── new.html.haml
+│   │   ├── new.mobile.haml
+│   │   └── show.haml
+│   ├── devise
+│   │   ├── confirmations
+│   │   │   └── new.html.haml
+│   │   ├── mailer
+│   │   │   ├── confirmation_instructions.html.haml
+│   │   │   ├── confirmation_instructions.text.erb
+│   │   │   ├── reset_password_instructions.html.haml
+│   │   │   ├── reset_password_instructions.text.erb
+│   │   │   ├── unlock_instructions.html.haml
+│   │   │   └── unlock_instructions.text.erb
+│   │   ├── passwords
+│   │   │   ├── edit.haml
+│   │   │   ├── edit.mobile.haml
+│   │   │   ├── new.haml
+│   │   │   └── new.mobile.haml
+│   │   ├── shared
+│   │   │   └── _links.haml
+│   │   └── unlocks
+│   │       └── new.html.haml
+│   ├── errors
+│   │   ├── error_404.haml
+│   │   ├── error_422.haml
+│   │   └── error_500.haml
+│   ├── help
+│   │   ├── faq.html.haml
+│   │   └── faq.mobile.haml
+│   ├── home
+│   │   ├── default.haml
+│   │   ├── podmin.haml
+│   │   └── show.haml
+│   ├── invitations
+│   │   └── new.html.haml
+│   ├── layouts
+│   │   ├── _drawer.mobile.haml
+│   │   ├── _footer.html.haml
+│   │   ├── _head.haml
+│   │   ├── _header.html.haml
+│   │   ├── _header.mobile.haml
+│   │   ├── _header_not_connected.haml
+│   │   ├── application.html.haml
+│   │   ├── application.mobile.haml
+│   │   ├── error_page.haml
+│   │   ├── notifier.html.haml
+│   │   ├── notifier.text.haml
+│   │   ├── with_header.html.haml
+│   │   └── with_header_with_footer.html.haml
+│   ├── node_info
+│   │   ├── _statistic.haml
+│   │   ├── _statistics.haml
+│   │   ├── statistics.html.haml
+│   │   └── statistics.mobile.haml
+│   ├── notifications
+│   │   ├── _notification.haml
+│   │   ├── _notification.mobile.haml
+│   │   ├── index.html.haml
+│   │   └── index.mobile.haml
+│   ├── notifier
+│   │   ├── also_commented.html.haml
+│   │   ├── also_commented.text.erb
+│   │   ├── comment_on_post.html.haml
+│   │   ├── comment_on_post.text.erb
+│   │   ├── confirm_email.html.haml
+│   │   ├── confirm_email.text.erb
+│   │   ├── contacts_birthday.html.haml
+│   │   ├── contacts_birthday.text.erb
+│   │   ├── csrf_token_fail.html.haml
+│   │   ├── csrf_token_fail.text.erb
+│   │   ├── liked.html.haml
+│   │   ├── liked.text.erb
+│   │   ├── liked_comment.html.haml
+│   │   ├── liked_comment.text.erb
+│   │   ├── mentioned.html.haml
+│   │   ├── mentioned.text.erb
+│   │   ├── mentioned_in_comment.html.haml
+│   │   ├── mentioned_in_comment.text.erb
+│   │   ├── plain_markdown_email.html.haml
+│   │   ├── plain_markdown_email.text.haml
+│   │   ├── private_message.html.haml
+│   │   ├── private_message.text.erb
+│   │   ├── reshared.html.haml
+│   │   ├── reshared.text.erb
+│   │   ├── single_admin.html.haml
+│   │   ├── single_admin.text.erb
+│   │   ├── started_sharing.html.haml
+│   │   └── started_sharing.text.erb
+│   ├── people
+│   │   ├── _add_contact.haml
+│   │   ├── _index.html.haml
+│   │   ├── _person.html.haml
+│   │   ├── _person.mobile.haml
+│   │   ├── _relationship_action.haml
+│   │   ├── index.html.haml
+│   │   ├── index.mobile.haml
+│   │   ├── show.html.haml
+│   │   └── show.mobile.haml
+│   ├── photos
+│   │   ├── _index.mobile.haml
+│   │   ├── _new_profile_photo.haml
+│   │   └── show.mobile.haml
+│   ├── posts
+│   │   ├── show.html.haml
+│   │   └── show.mobile.haml
+│   ├── profiles
+│   │   ├── _edit_private.haml
+│   │   ├── _edit_public.haml
+│   │   ├── edit.haml
+│   │   └── edit.mobile.haml
+│   ├── publisher
+│   │   ├── _publisher.html.haml
+│   │   └── _publisher.mobile.haml
+│   ├── registrations
+│   │   ├── _new.erb
+│   │   ├── _registrations_closed.haml
+│   │   ├── new.haml
+│   │   ├── new.mobile.haml
+│   │   ├── registrations_closed.haml
+│   │   └── registrations_closed.mobile.haml
+│   ├── report
+│   │   ├── _report_modal.erb
+│   │   ├── _reports.haml
+│   │   ├── index.html.haml
+│   │   └── index.mobile.haml
+│   ├── reshares
+│   │   └── _reshare.mobile.haml
+│   ├── services
+│   │   ├── _add_remove_services.haml
+│   │   ├── index.html.haml
+│   │   └── index.mobile.haml
+│   ├── sessions
+│   │   ├── _form.haml
+│   │   ├── new.html.haml
+│   │   ├── new.mobile.haml
+│   │   └── two_factor.html.haml
+│   ├── shared
+│   │   ├── _donatepod.html.haml
+│   │   ├── _invitations.haml
+│   │   ├── _links.haml
+│   │   ├── _modal.haml
+│   │   ├── _nsfw_shield.mobile.haml
+│   │   ├── _photo_area.mobile.haml
+│   │   ├── _post_info.mobile.haml
+│   │   ├── _public_explain.haml
+│   │   ├── _settings_nav.haml
+│   │   ├── _settings_nav.mobile.haml
+│   │   ├── _stream.haml
+│   │   ├── _stream_element.mobile.haml
+│   │   └── _stream_more_button.mobile.haml
+│   ├── simple_captcha
+│   │   └── _simple_captcha.haml
+│   ├── status_messages
+│   │   ├── _poll.mobile.haml
+│   │   ├── _status_message.mobile.haml
+│   │   ├── bookmarklet.html.haml
+│   │   ├── bookmarklet.mobile.haml
+│   │   ├── new.html.haml
+│   │   └── new.mobile.haml
+│   ├── streams
+│   │   ├── main_stream.html.haml
+│   │   └── main_stream.mobile.haml
+│   ├── tag_followings
+│   │   └── manage.mobile.haml
+│   ├── tags
+│   │   ├── _followed_tags_listings.haml
+│   │   ├── show.haml
+│   │   └── show.mobile.haml
+│   ├── terms
+│   │   └── default.haml
+│   ├── two_factor_authentications
+│   │   ├── _activate.haml
+│   │   ├── _confirm.haml
+│   │   ├── _deactivate.haml
+│   │   ├── _recovery.haml
+│   │   ├── _token_form.haml
+│   │   ├── confirm_2fa.html.haml
+│   │   ├── recovery_codes.html.haml
+│   │   └── show.html.haml
+│   └── users
+│       ├── _blocked_person.haml
+│       ├── _close_account_modal.haml
+│       ├── _edit.haml
+│       ├── _post_default.html.haml
+│       ├── _post_default.mobile.haml
+│       ├── _privacy_settings.haml
+│       ├── edit.html.haml
+│       ├── edit.mobile.haml
+│       ├── getting_started.haml
+│       ├── getting_started.mobile.haml
+│       ├── privacy_settings.html.haml
+│       ├── privacy_settings.mobile.haml
+│       └── public.atom.builder
+└── workers
+    ├── archive_base.rb
+    ├── base.rb
+    ├── check_birthday.rb
+    ├── clean_cached_files.rb
+    ├── cleanup_old_exports.rb
+    ├── cleanup_pending_photos.rb
+    ├── deferred_dispatch.rb
+    ├── deferred_retraction.rb
+    ├── delete_account.rb
+    ├── delete_post_from_service.rb
+    ├── export_photos.rb
+    ├── export_user.rb
+    ├── fetch_profile_photo.rb
+    ├── fetch_public_posts.rb
+    ├── fetch_webfinger.rb
+    ├── gather_o_embed_data.rb
+    ├── gather_open_graph_data.rb
+    ├── import_user.rb
+    ├── mail
+    │   ├── also_commented.rb
+    │   ├── comment_on_post.rb
+    │   ├── confirm_email.rb
+    │   ├── contacts_birthday.rb
+    │   ├── csrf_token_fail.rb
+    │   ├── invite_email.rb
+    │   ├── liked.rb
+    │   ├── liked_comment.rb
+    │   ├── mentioned.rb
+    │   ├── mentioned_in_comment.rb
+    │   ├── notifier_base.rb
+    │   ├── private_message.rb
+    │   ├── report_worker.rb
+    │   ├── reshared.rb
+    │   └── started_sharing.rb
+    ├── post_to_service.rb
+    ├── process_photo.rb
+    ├── publish_to_hub.rb
+    ├── queue_users_for_removal.rb
+    ├── receive_base.rb
+    ├── receive_local.rb
+    ├── receive_private.rb
+    ├── receive_public.rb
+    ├── recheck_scheduled_pods.rb
+    ├── recurring_pod_check.rb
+    ├── remove_old_user.rb
+    ├── reset_password.rb
+    ├── send_base.rb
+    ├── send_private.rb
+    └── send_public.rb
+
+104 directories, 821 files
