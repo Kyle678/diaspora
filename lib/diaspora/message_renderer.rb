@@ -226,7 +226,7 @@ module Diaspora
       #}
       #result
       #result.html_safe
-    #end
+    end
 
     def markdownified_for_mail
       process(disable_hovercards: true) {
