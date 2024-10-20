@@ -211,7 +211,7 @@ module Diaspora
 
     # @param [Hash] opts Override global output options, see {#initialize}
     def markdownified opts={}
-      process(opts) {
+      result = process(opts) {
         #process_newlines
         #normalize
         #diaspora_links
@@ -222,7 +222,9 @@ module Diaspora
         #render_tags
         #squish
         #append_and_truncate
-      }.html_safe # rubocop:disable Rails/OutputSafety
+      #}.html_safe # rubocop:disable Rails/OutputSafety
+      }
+      result.html_safe
     end
 
     def markdownified_for_mail
