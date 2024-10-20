@@ -224,7 +224,7 @@ module Diaspora
         append_and_truncate
       #}.html_safe # rubocop:disable Rails/OutputSafety
       }
-      result.html_escape
+      result.html_escape_once
       #result
       #result.html_safe
     end
