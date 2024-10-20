@@ -31,7 +31,7 @@ class Message < ApplicationRecord
   end
 
   def process_text(content)
-    content.gsub(/<<([^<>]+)>>/, '\1')
+    content
   end
 
   # @return [Array<Person>]
