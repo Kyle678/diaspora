@@ -70,6 +70,7 @@ module Diaspora
         #message.gsub(/^[\w\<][^\n]*\n+/) do |x|
         #  x =~ /\n{2}/ ? x : (x.strip!; x << " \n")
         #end
+        logger.info message
         message
       end
 
