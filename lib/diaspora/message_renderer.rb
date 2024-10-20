@@ -222,8 +222,8 @@ module Diaspora
         #render_tags
         #squish
         append_and_truncate
-      }.html_safe # rubocop:disable Rails/OutputSafety
-      #}
+      #}.html_safe # rubocop:disable Rails/OutputSafety
+      }
       #result
       #result.html_safe
     end
