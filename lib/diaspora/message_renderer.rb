@@ -190,8 +190,8 @@ module Diaspora
     # @param [Hash] opts Override global output options, see {#initialize}
     def plain_text_for_json opts={}
       process(opts) {
-        normalize
-        diaspora_links
+        #normalize
+        #diaspora_links
         camo_urls if AppConfig.privacy.camo.proxy_markdown_images?
       }
     end
@@ -199,13 +199,13 @@ module Diaspora
     # @param [Hash] opts Override global output options, see {#initialize}
     def html opts={}
       process(opts) {
-        escape
-        normalize
+        #escape
+        #normalize
         diaspora_links
         render_mentions
         render_tags
-        squish
-        append_and_truncate
+        #squish
+        #append_and_truncate
       }.html_safe # rubocop:disable Rails/OutputSafety
     end
 
@@ -213,27 +213,27 @@ module Diaspora
     def markdownified opts={}
       process(opts) {
         process_newlines
-        normalize
+        #normalize
         diaspora_links
         camo_urls if AppConfig.privacy.camo.proxy_markdown_images?
         escape_mentions_for_markdown
-        markdownify
+        #markdownify
         render_mentions
         render_tags
-        squish
-        append_and_truncate
+        #squish
+        #append_and_truncate
       }.html_safe # rubocop:disable Rails/OutputSafety
     end
 
     def markdownified_for_mail
       process(disable_hovercards: true) {
         process_newlines
-        normalize
+        #normalize
         diaspora_links
         camo_urls if AppConfig.privacy.camo.proxy_markdown_images?
         render_mentions
         markdownify(Diaspora::Markdownify::Email)
-        squish
+        #squish
         append_and_truncate
       }.html_safe # rubocop:disable Rails/OutputSafety
     end
