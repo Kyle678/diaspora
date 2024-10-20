@@ -211,18 +211,18 @@ module Diaspora
 
     # @param [Hash] opts Override global output options, see {#initialize}
     def markdownified opts={}
-      process(opts) {
-        process_newlines
+      process(opts) {}
+        #process_newlines
         #normalize
-        diaspora_links
-        camo_urls if AppConfig.privacy.camo.proxy_markdown_images?
-        escape_mentions_for_markdown
+        #diaspora_links
+        #camo_urls if AppConfig.privacy.camo.proxy_markdown_images?
+        #escape_mentions_for_markdown
         #markdownify
-        render_mentions
-        render_tags
+        #render_mentions
+        #render_tags
         #squish
         #append_and_truncate
-      }.html_safe # rubocop:disable Rails/OutputSafety
+      #}.html_safe # rubocop:disable Rails/OutputSafety
     end
 
     def markdownified_for_mail
