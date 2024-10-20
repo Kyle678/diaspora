@@ -26,7 +26,12 @@ class Message < ApplicationRecord
   end
 
   def message
-    @message ||= Diaspora::MessageRenderer.new text
+    processed_text = process_text(text)
+    @message ||= Diaspora::MessageRenderer.new(processed_text)
+  end
+
+  def process_text(content)
+    content.gsub(/<<[^<>]+)>>/, '\1')
   end
 
   # @return [Array<Person>]
