@@ -224,7 +224,7 @@ module Diaspora
         #append_and_truncate
       #}.html_safe # rubocop:disable Rails/OutputSafety
       }
-      puts "result: #{result}"
+      result
       #result.html_safe
     end
 
