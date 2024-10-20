@@ -18,7 +18,8 @@ module Diaspora
         end
 
         def normalize message
-          message.gsub(/[\u202a\u202b]#[\u200e\u200f\u202d\u202e](\S+)\u202c/u, "#\\1").gsub(/<<([^>]+)>>/, '<<\1>>')
+          #message.gsub(/[\u202a\u202b]#[\u200e\u200f\u202d\u202e](\S+)\u202c/u, "#\\1").gsub(/<<([^>]+)>>/, '<<\1>>')
+          message
         end
       end
 
