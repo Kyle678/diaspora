@@ -61,7 +61,7 @@ module Diaspora
         renderer = renderer_class.new options[:markdown_render_options]
         markdown = Redcarpet::Markdown.new renderer, options[:markdown_options]
 
-        @message = markdown.render message
+        #@message = markdown.render message
       end
 
       # In very clear cases, let newlines become <br /> tags
