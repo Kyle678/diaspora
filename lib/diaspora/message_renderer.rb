@@ -31,22 +31,22 @@ module Diaspora
       end
 
       def squish
-        @message = message.squish if options[:squish]
+        #@message = message.squish if options[:squish]
       end
 
       def append_and_truncate
         if options[:truncate]
           # TODO: Remove .dup when upgrading to Rails 6.x.
-          @message = @message.truncate(options[:truncate] - options[:append].to_s.size).dup
+          #@message = @message.truncate(options[:truncate] - options[:append].to_s.size).dup
         end
 
-        @message << options[:append].to_s
-        @message << options[:append_after_truncate].to_s
+        #@message << options[:append].to_s
+        #@message << options[:append_after_truncate].to_s
       end
 
       def escape
         if options[:escape]
-          @message = ERB::Util.html_escape_once message
+          #@message = ERB::Util.html_escape_once message
         end
       end
 
@@ -74,31 +74,31 @@ module Diaspora
       end
 
       def escape_mentions_for_markdown
-        @message = Diaspora::Mentionable.escape_for_markdown(message)
+        #@message = Diaspora::Mentionable.escape_for_markdown(message)
       end
 
       def render_mentions
         unless options[:disable_hovercards] || options[:mentioned_people].empty?
-          @message = Diaspora::Mentionable.format message, options[:mentioned_people]
+          #@message = Diaspora::Mentionable.format message, options[:mentioned_people]
         end
 
         if options[:disable_hovercards]
-          @message = Diaspora::Mentionable.filter_people(message, [], absolute_links: true)
+          #@message = Diaspora::Mentionable.filter_people(message, [], absolute_links: true)
         else
           make_mentions_plain_text
         end
       end
 
       def make_mentions_plain_text
-        @message = Diaspora::Mentionable.format message, options[:mentioned_people], plain_text: true
+        #@message = Diaspora::Mentionable.format message, options[:mentioned_people], plain_text: true
       end
 
       def render_tags
-        @message = Diaspora::Taggable.format_tags message, no_escape: !options[:escape_tags]
+        #@message = Diaspora::Taggable.format_tags message, no_escape: !options[:escape_tags]
       end
 
       def camo_urls
-        @message = Diaspora::Camo.from_markdown(@message)
+        #@message = Diaspora::Camo.from_markdown(@message)
       end
 
       def normalize
@@ -198,15 +198,15 @@ module Diaspora
 
     # @param [Hash] opts Override global output options, see {#initialize}
     def html opts={}
-      process(opts) {
+      process(opts) {}
         #escape
         #normalize
-        diaspora_links
-        render_mentions
-        render_tags
+        #diaspora_links
+        #render_mentions
+        #render_tags
         #squish
         #append_and_truncate
-      }.html_safe # rubocop:disable Rails/OutputSafety
+      #}.html_safe # rubocop:disable Rails/OutputSafety
     end
 
     # @param [Hash] opts Override global output options, see {#initialize}
