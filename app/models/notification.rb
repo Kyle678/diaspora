@@ -29,6 +29,7 @@ class Notification < ApplicationRecord
   end
 
   def linked_object
+    return "This post has been deleted." if target.nil?
     target
   end
 

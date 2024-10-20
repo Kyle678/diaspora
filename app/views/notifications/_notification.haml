@@ -5,6 +5,7 @@
                       class: (note.unread ? "unread" : "read")}
   .unread-toggle.pull-right
     %i.entypo-eye{title: (note.unread ? t("notifications.index.mark_read") : t("notifications.index.mark_unread"))}
+  
   - if note.type == "Notifications::StartedSharing" && (!defined?(no_aspect_dropdown) || !no_aspect_dropdown)
     - if note.target.present?
       - gon_load_contact(note.contact)
@@ -12,8 +13,13 @@
         .aspect-membership-dropdown.placeholder{data: {person_id: note.target.id}}
 
   .media-object.pull-left
-    = person_image_link note.actors.first, :size => :thumb_small, :class => 'hovercardable'
+    = person_image_link note.actors.first, size: :thumb_small, class: 'hovercardable'
+  
   .media-body
-    = notification_message_for(note)
+    - if note.linked_object == "This post has been deleted."
+      %span= note.linked_object  # Custom message when the post is deleted
+    - else
+      = notification_message_for(note)  # Regular message for existing posts
+
     %div
       = timeago(note.updated_at)

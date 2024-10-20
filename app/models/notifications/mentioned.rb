@@ -5,11 +5,8 @@ module Notifications
     extend ActiveSupport::Concern
 
     def linked_object
-      if target.present?
-        target.mentions_container
-      else
-        "You were mentioned in a deleted post"
-      end
+      return "This post has been deleted." if target.nil?
+      target.mentions_container
     end
 
     module ClassMethods
