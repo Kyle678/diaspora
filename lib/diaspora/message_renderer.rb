@@ -67,9 +67,10 @@ module Diaspora
       # In very clear cases, let newlines become <br /> tags
       # Grabbed from Github flavored Markdown
       def process_newlines
-        message.gsub(/^[\w\<][^\n]*\n+/) do |x|
-          x =~ /\n{2}/ ? x : (x.strip!; x << " \n")
-        end
+        #message.gsub(/^[\w\<][^\n]*\n+/) do |x|
+        #  x =~ /\n{2}/ ? x : (x.strip!; x << " \n")
+        #end
+        message
       end
 
       def escape_mentions_for_markdown
