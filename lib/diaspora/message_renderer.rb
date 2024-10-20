@@ -54,7 +54,7 @@ module Diaspora
         # Footnotes are not supported in text-only outputs (mail, crossposts etc)
         stripdown_options = options[:markdown_options].except(:footnotes)
         renderer = Redcarpet::Markdown.new Redcarpet::Render::StripDown, stripdown_options
-        @message = renderer.render(message).strip
+        #@message = renderer.render(message).strip
       end
 
       def markdownify(renderer_class=Diaspora::Markdownify::HTML)
@@ -70,7 +70,6 @@ module Diaspora
         #message.gsub(/^[\w\<][^\n]*\n+/) do |x|
         #  x =~ /\n{2}/ ? x : (x.strip!; x << " \n")
         #end
-        logger.info message
         message
       end
 
