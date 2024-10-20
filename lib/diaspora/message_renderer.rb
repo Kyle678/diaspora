@@ -102,7 +102,7 @@ module Diaspora
       end
 
       def normalize
-        @message = self.class.normalize(@message)
+        #@message = self.class.normalize(@message)
       end
 
       def diaspora_links
